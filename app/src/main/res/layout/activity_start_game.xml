@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGreenBack"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    tools:context=".StartGame">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreenBack">
+
+
+        <TextView
+            android:id="@+id/whosTurn"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/accPtsText"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/ptsAcc"
+            android:textColor="@android:color/black"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/whosTurn" />
+
+        <TextView
+            android:id="@+id/accPtsPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accPtsText" />
+
+        <TextView
+            android:id="@+id/totPtsText"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/totalPts"
+            android:textColor="@android:color/black"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accPtsPlayer" />
+
+        <TextView
+            android:id="@+id/totPtsPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totPtsText" />
+
+    <LinearLayout
+        android:id="@+id/top3"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/totPtsPlayer">
+
+        <ImageButton
+            android:id="@+id/btnd1"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+
+            android:background="@color/colorGreenBack"
+            android:onClick="toggleD1"
+            android:shadowColor="@android:color/black"
+            android:src="@drawable/dice1small" />
+
+        <ImageButton
+            android:id="@+id/btnd2"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorGreenBack"
+            android:onClick="toggleD2"
+            android:shadowColor="@android:color/black"
+            android:src="@drawable/dice2small" />
+
+        <ImageButton
+            android:id="@+id/btnd3"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorGreenBack"
+            android:onClick="toggleD3"
+            android:shadowColor="@android:color/black"
+            android:src="@drawable/dice3small" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/top3checkboxes"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top3">
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bot3"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/top3checkboxes">
+
+        <ImageButton
+            android:id="@+id/btnd4"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorGreenBack"
+            android:onClick="toggleD4"
+            android:shadowColor="@android:color/black"
+            android:src="@drawable/dice4small" />
+
+        <ImageButton
+            android:id="@+id/btnd5"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorGreenBack"
+            android:onClick="toggleD5"
+            android:shadowColor="@android:color/black"
+            android:src="@drawable/dice5small" />
+
+        <ImageButton
+            android:id="@+id/btnd6"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorGreenBack"
+            android:onClick="toggleD6"
+            android:shadowColor="@android:color/black"
+            android:src="@drawable/dice6small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bot3checkboxes"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bot3">
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/topBtns"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bot3checkboxes">
+
+        <Button
+            android:id="@+id/btnBank"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="bankPoints"
+            android:shadowColor="@android:color/black"
+            android:text="@string/bank"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnRoll"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="roll"
+            android:text="@string/roll"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnPass"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="pass"
+            android:shadowColor="@android:color/black"
+            android:text="@string/pass"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/botBtns"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBtns">
+
+        <Button
+            android:id="@+id/btnScorePeek"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="whatWouldMyScoreBe"
+            android:text="@string/scorePeek"
+            android:textColor="@android:color/black" />
+
+
+        <Button
+            android:id="@+id/btnQuit"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="goHomeScreen"
+            android:text="@string/quit"
+            android:textColor="@android:color/black" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rankings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/botBtns">
+
+        <TextView
+            android:id="@+id/currentRankings1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:textColor="@android:color/black"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

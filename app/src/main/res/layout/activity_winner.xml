@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGreenBack"
+    tools:context=".Winner"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="150dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnHomeScreen"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="goHome"
+            android:shadowColor="@android:color/black"
+            android:text="@string/goHome"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnPlayAgain"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="playAgain"
+            android:text="@string/playBtn2"
+            android:textColor="@android:color/black" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/winners"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="@string/win"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/winners1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:visibility="invisible"/>
+
+</LinearLayout>
